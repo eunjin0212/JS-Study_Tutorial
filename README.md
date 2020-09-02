@@ -2,8 +2,8 @@
 
 # 1 [자바 스크립트](https://ko.javascript.info/)
 
-## 1-1 JavaScript 란?
-
+> ## 1-1 JavaScript 란?
+>
 > - Java =/= JavaScript
 > - ‘웹페이지에 생동감을 불어넣기 위해’ 만들어진 프로그래밍 언어
 > - V8 – Chrome, Opera
@@ -13,28 +13,28 @@
 > - SquirrelFish - Safari
 > - 개발자 도구 이용하기 (Windows - F12, Mac/Chrome - Cmd+Opt+J, Safari - Cmd+Opt+C)
 
-## 1-2 JavaScript가 못하는 일
-
+> ## 1-2 JavaScript가 못하는 일
+>
 > - 웹페이지 내 스크립트는 디스크에 저장된 임의의 파일을 읽거나 쓰고, 복사하거나 실행할 때
 > - 타 사이트나 도메인에서 데이터를 받아오는 건 불가능
 > - 도메인이나 프로토콜, 포트가 다르다면 페이지에 접근할 수 없음
 
-## 1-3 JavaScript의 강점
-
+> ## 1-3 JavaScript의 강점
+>
 > - HTML/CSS와 완전히 통합할 수 있음
 > - 간단한 일은 간단하게 처리할 수 있게 해줌
 > - 모든 주요 브라우저에서 지원하고, 기본 언어로 사용됨
 
-## 1-4 알아두면 좋은 사이트
-
+> ## 1-4 알아두면 좋은 사이트
+>
 > - [ECMA-262 명세서](https://www.ecma-international.org/publications/standards/Ecma-262.htm)
 > - [MDN JavaScript Reference](https://developer.mozilla.org/ko/)
 > - [특정 기능 지원 여부](https://caniuse.com/)
 > - [암호화 관련 기능 확인](https://caniuse.com/#feat=cryptography)
 > - [자바스크립트 기능 목록](https://kangax.github.io/compat-table/es6/)
 
-## 1-5 쓰기 좋은 에디터
-
+> ## 1-5 쓰기 좋은 에디터
+>
 > - Atom (크로스 플랫폼, 무료)
 > - Visual Studio Code (크로스 플랫폼, 무료)
 > - Sublime Text (크로스 플랫폼, 셰어웨어)
@@ -46,8 +46,8 @@
 
 # 2 [JavaScript 기초](https://ko.javascript.info/hello-world)
 
-## 2-1 JavaScript 사용
-
+> ## 2-1 JavaScript 사용
+>
 > - 내부스크립트 (HTML>Body) <script>명령어</script>
 > - 외부스크립트 <script scr = "파일명/주소" ></script>
 > - type 속성 : 필수 아님
@@ -85,16 +85,16 @@
     </body>
     </html>
 
-## 2-2 코드 구조
-
+> ## 2-2 코드 구조
+>
 > - 문(statement) = 문법 구조(syntax structure), 명령어(command)
 > - (끝나는 지점); <-세미콜론 : 단, 줄 바꿈이 있을 시 생략 가능
 > - (끝나는
 >   지점) <-이러한 불완전한 표현식은 세미클론이 생략 안 됨
 > - [다른 명령어] <- 대괄호 앞에는 세미콜론 생략 안 됨
 
-## 2-3 엄격 모드(strict mode)
-
+> ## 2-3 엄격 모드(strict mode)
+>
 > - 'use strict'라는 특별한 지시자를 사용해 엄격 모드를 활성화 했을 때만 새로운 기능들을 추가 할 수 있게 함
 > - "use strict"; :반드시 최상단 위치, 취소 불가능
 > - 브라우저 콘솔 사용시 'use strict'; <Shift+Enter>
@@ -102,12 +102,12 @@
 >   function() {'use strict'; 코드 }
 > - 코드를 클래스와 모듈을 사용한다면 "use strict" 생략 가능
 
-## 2-4 ⭐️변수와 상수
-
-> ### 변수
+> ## 2-4 ⭐️변수와 상수
 >
-> - 변수(variable) : 데이터를 저장할 때 쓰이는 ‘이름이 붙은 저장소’
-> - let : 모던한 변수 선언
+> > ### 변수
+> >
+> > - 변수(variable) : 데이터를 저장할 때 쓰이는 ‘이름이 붙은 저장소’
+> > - let : 모던한 변수 선언
 
     let message; // 변수 선언
     message = 'Hello'; // 문자열 저장
@@ -117,30 +117,30 @@
     let message = 'Hello!'; // 변수를 선언하고 값을 할당
     alert(message); // Hello!
 
-> - 변수 선언은 한 줄에 하나씩
+> > - 변수 선언은 한 줄에 하나씩
 
     let user = 'John',
         age = 25,
         message = 'Hello';
 
-> - var : 오래된 변수 선언, 잘 사용하지 않음
->
-> > ##### 변수명 짓기
+> > - var : 오래된 변수 선언, 잘 사용하지 않음
 > >
-> > - 오직 문자와 숫자, 그리고 기호 \$와 \_만 들어갈 수 있음
-> > - 첫 글자는 숫자가 될 수 없음.
-> > - 대소문자 구별, 대부분 영어로 변수 명을 지음
-> > - let, class, return, function(예약어) 로 지을 수 없음
-
-> ### 상수
->
-> - const : 변하지 않는 변수 선언
->
-> > #### 상수명 짓기
+> > > #### 변수명 짓기
+> > >
+> > > - 오직 문자와 숫자, 그리고 기호 \$와 \_만 들어갈 수 있음
+> > > - 첫 글자는 숫자가 될 수 없음.
+> > > - 대소문자 구별, 대부분 영어로 변수 명을 지음
+> > > - let, class, return, function(예약어) 로 지을 수 없음
 > >
-> > - const 변수 명은 대문자와 \_ 사용 (코드 가독성 증가)
-> > - 변수 명은 간결하게
-> > - 사람이 읽을 수 있는 이름을 사용 , 명확히 알고 있지 않을 경우 외에는 줄임말, a, b, c와 같은 짧은 이름X, 최대한 서술적이고 간결하게, 자신만의 규칙이나 소속된 팀의 규칙으로 지을 것
+> > ### 상수
+> >
+> > - const : 변하지 않는 변수 선언
+> >
+> > > #### 상수명 짓기
+> > >
+> > > - const 변수 명은 대문자와 \_ 사용 (코드 가독성 증가)
+> > > - 변수 명은 간결하게
+> > > - 사람이 읽을 수 있는 이름을 사용 , 명확히 알고 있지 않을 경우 외에는 줄임말, a, b, c와 같은 짧은 이름X, 최대한 서술적이고 간결하게, 자신만의 규칙이나 소속된 팀의 규칙으로 지을 것
 
     * 과제 1
     let admin, name;
@@ -152,10 +152,10 @@
     let ourPlanet = "Earth";
     let currentUserName = "John";
 
-## 2-5 자료형 [동적 타입(dynamically typed)]
-
-> ### 1. 숫자형
+> ## 2-5 자료형 [동적 타입(dynamically typed)]
 >
+> > ### 1. 숫자형
+> >
 > > - 정수, 부동소수점 숫자(floating point number)가 있다
 > > - Infinity : 어떤 숫자보다 큰 특수값 무한대(∞) 어느 숫자든 0으로 나누면 무한대를 얻을 수 있음
 
@@ -166,11 +166,53 @@
 
     alert( "숫자가 아님" / 2 ); // 오류
 
+> > ### 2. BigInt
+> >
 > > - BigInt : 아주 큰 숫자가 필요한 상황, 아주 높은 정밀도로 작업을 할 때 사용, 길이 상관 없이 정수를 나타낼 수 있음, 정수 리터럴 끝에 n을 붙임
 
     const bigInt = 1234567890123456789012345678901234567890n;
 
-> ### 2. 문자형
->
+> > ### 3. 문자형
+> >
 > > - "",'',``(백틱)로 묶어서 사용
 > > - `${원하는 변수}` 백틱만 사용 가능
+
+> > ### 4. 불린형
+> >
+> > - 불린형(논리 타입) : true, false 두 가지가 있음
+
+    let nameFieldChecked = true; // 네, name field가 확인되었습니다(checked)
+    let ageFieldChecked = false; // 아니요, age field를 확인하지 않았습니다(not checked)
+
+> > ### 5. null
+> >
+> > - null 값은 오로지 null 값만 포함하는 별도의 자료형을 만듬
+> > - 존재하지 않는(nothing)’ 값, ‘비어 있는(empty)’ 값, ‘알 수 없는(unknown)’ 값을 나타내는 데 사용
+
+> > ### 6. undefined
+> >
+> > - 값이 할당되지 않은 상태, 변수는 선언했지만, 값을 할당하지 않았다면 해당 변수에 undefined가 자동으로 할당
+
+> > ### 7. 객체형(object)
+> >
+> > - object : 객체는 데이터 컬렉션이나 복잡한 개체(entity)를 표현할 수 있음
+
+> > ### 8. 심볼형(symbol)
+> >
+> > - symbol : 고유한 식별자(unique identifier)를 만들 때 사용
+
+> > ### typeof 연산자
+> >
+> > - 인수의 자료형을 반환
+> > - typeof x, typeof(x) 형태로 사용
+> > - 자료형에 따라 처리 방식을 다르게, 변수의 자료형을 빠르게 알아냄
+
+    typeof undefined // "undefined"
+    typeof 0 // "number"
+    typeof 10n // "bigint"
+    typeof true // "boolean"
+    typeof "foo" // "string"
+    typeof Symbol("id") // "symbol"
+    typeof Math // "object" Math는 수학 연산을 제공하는 내장 객체
+    typeof null // "object" 오류, 별도의 고유한 자료형을 가지는 특수값, 객체가 아님, 하위 호환성 유지를 위해 남김
+    typeof alert // "function" 오래 전에 만들어진 규칙, 마찬가지로 하위 호환성을 위해 남겨짐
