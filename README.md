@@ -44,8 +44,40 @@
 
 ---
 
-# 2 [JavaScript 사용](https://ko.javascript.info/hello-world)
+# 2 [JavaScript 기초](https://ko.javascript.info/hello-world)
 
 ## 2-1 JavaScript 사용
 
-    * HTML에 Body에 삽입 <script>명령어</script>
+> - 내부스크립트 (HTML>Body) <script>명령어</script>
+> - 외부스크립트 <script scr = "파일명/주소" ></script>
+> - type 속성 : 필수 아님
+> - language 속성 : 필수 아님
+> - scr 속성 : 이 속성이 있으면 내부 코드는 무시
+> - <!--  // 주석 /* ~ */ -->
+
+    *과제 1
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+        alert('자바스크립트!');
+        </script>
+    </body>
+    </html>
+    *과제 2
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script src="assignment.js"></script>
+    </body>
+    </html>
