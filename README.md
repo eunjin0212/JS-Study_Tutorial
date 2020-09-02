@@ -99,10 +99,7 @@
 > - "use strict"; :반드시 최상단 위치, 취소 불가능
 > - 브라우저 콘솔 사용시 'use strict'; <Shift+Enter>
 > - 브라우저가 오래 됐을 시
->   function() {
->   'use strict';
->   코드 }
-
+>   function() {'use strict'; 코드 }
 > - 코드를 클래스와 모듈을 사용한다면 "use strict" 생략 가능
 
 ## 2-4 ⭐️변수와 상수
