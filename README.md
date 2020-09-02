@@ -27,11 +27,11 @@
 
 ## 1-4 알아두면 좋은 사이트
 
-- ECMA-262 명세서(https://www.ecma-international.org/publications/standards/Ecma-262.htm)
-- MDN JavaScript Reference
-- 특정 기능을 지원하는지(https://caniuse.com/)
-- 암호화 관련 기능 확인(https://caniuse.com/#feat=cryptography)
-- 자바스크립트 기능 목록(https://kangax.github.io/compat-table/es6/)
+- [ECMA-262 명세서](https://www.ecma-international.org/publications/standards/Ecma-262.htm)
+- [MDN JavaScript Reference](https://developer.mozilla.org/ko/)
+- [특정 기능 지원 여부](https://caniuse.com/)
+- [암호화 관련 기능 확인](https://caniuse.com/#feat=cryptography)
+- [자바스크립트 기능 목록](https://kangax.github.io/compat-table/es6/)
 
 ## 1-5 쓰기 좋은 에디터
 
@@ -48,4 +48,4 @@
 
 ## 2-1 JavaScript 사용
 
-- HTML에 Body에 삽입 <script>명령어</script>
+    * HTML에 Body에 삽입 <script>명령어</script>
