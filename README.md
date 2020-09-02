@@ -284,13 +284,13 @@
 >   > `+ (단항 덧샘)` > `- (단항 부정)` > `** (지수)` > `* (곱셈)` > `/ (나눗셈)` > `+ (덧셈)` > `- (뺄셈)` > `= (할당)` [우선순위테이블](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)
 > * `증가(increment) 연산자 ++` : 변수를 1 증가시킴 (변수에만 사용 가능, 변수 앞 뒤)
 > * `감소(decrement) 연산자 --` : 변수를 1 감소시킴 (변수에만 사용 가능, 변수 앞 뒤)
->   > `변수++` : 후위형(postfix form) --> 증가, 감소 전의 기존값을 반환
->   > `++변수` : 전위형(prefix form) --> 증가, 감소 후의 새로운 값을 반환
-> * `비트(bitwise) 연산자` : 인수를 32비트 정수로 변환하여 이진 연산을 수행[MDN확인](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators)
->   > 비트 AND ( & )
->   > 비트 OR ( | )
->   > 비트 XOR ( ^ )
->   > 비트 NOT ( ~ )
->   > 왼쪽 시프트(LEFT SHIFT) ( << )
->   > 오른쪽 시프트(RIGHT SHIFT) ( >> )
->   > 부호 없는 오른쪽 시프트(ZERO-FILL RIGHT SHIFT) ( >>> )
+>   > - `변수++` : 후위형(postfix form) --> 증가, 감소 전의 기존값을 반환
+>   > - `++변수` : 전위형(prefix form) --> 증가, 감소 후의 새로운 값을 반환
+> * `비트(bitwise) 연산자` : 인수를 32비트 정수로 변환하여 이진 연산을 수행 [MDN확인](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators)
+>   > - 비트 AND ( & )
+>   > - 비트 OR ( | )
+>   > - 비트 XOR ( ^ )
+>   > - 비트 NOT ( ~ )
+>   > - 왼쪽 시프트(LEFT SHIFT) ( << )
+>   > - 오른쪽 시프트(RIGHT SHIFT) ( >> )
+>   > - 부호 없는 오른쪽 시프트(ZERO-FILL RIGHT SHIFT) ( >>> )
