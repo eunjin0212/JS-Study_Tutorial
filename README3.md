@@ -115,3 +115,17 @@
     alert('완료!');
 
 > - `break`,`continue`는 반복문 안에서만 사용할 수 있고, `레이블`은 반드시 break이나 continue 지시자 위에 있어야 함
+
+    과제
+    1. for (let i = 0; i < 5; ++i) alert( i );
+    2. for (let i = 0; i < 5; i++) alert( i );
+    // 먼저 i = 0 이고 i는 5보다 작다 i는 1만큼 증가 --> 1, 2, 3, 4 까지 출력
+    // 증가 연산자가 반환하는 값은 상관 없음 ++i나 i++나 상관 없이 값은 같음
+
+>
+
+    for (let i = 0; i < 3; i++) {               let i = 0;
+    alert( `number ${i}!` );            =       while (i < 3) {
+    }                                             alert( `number ${i}!` );
+                                                  i++;
+                                                }
