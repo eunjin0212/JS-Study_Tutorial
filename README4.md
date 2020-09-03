@@ -1,3 +1,5 @@
+[Go to previous page](README3.md)
+
 ## 2-15 함수
 
 > - `함수 선언(function declaration)`
@@ -90,3 +92,4 @@
     alert( sum(1, 2) ); // 3
 
 [요약본 다시보기](https://ko.javascript.info/javascript-specials)
+[Go to Next page](README5.md)
