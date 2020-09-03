@@ -128,4 +128,30 @@
     alert( `number ${i}!` );         =       while (i < 3) {
     }                                          alert( `number ${i}!` );
                                                i++;
+
                                              }
+
+## 2-14 switch문
+
+> - 하나 이상의 `case`문으로 구성
+> - `default`문도 있지만, 이는 필수는 아님
+> - 변수 `x` 와 일치하는 값을 찾으면 해당 `case`의 아래 코드가 실행 됨
+> - break문이 있거나, switch 문이 끝나면 코드의 실행 끝
+> - 값이 일치하는게 없다면 `default`아래 코드 실행
+> - 형이 다르면 코드가 실행되지 못함
+
+    switch(x) {
+    case 'value1':  // if (x === 'value1')
+        ...
+        [break]
+
+    case 'value2':  // if (x === 'value2')
+        ...
+        [break]
+
+    default:
+        ...
+        [break]
+    }
+
+[Go to Next page](README4.md)
