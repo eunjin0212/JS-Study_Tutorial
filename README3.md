@@ -124,8 +124,8 @@
 
 >
 
-    for (let i = 0; i < 3; i++) {               let i = 0;
-    alert( `number ${i}!` );            =       while (i < 3) {
-    }                                             alert( `number ${i}!` );
-                                                  i++;
-                                                }
+    for (let i = 0; i < 3; i++) {            let i = 0;
+    alert( `number ${i}!` );         =       while (i < 3) {
+    }                                          alert( `number ${i}!` );
+                                               i++;
+                                             }
