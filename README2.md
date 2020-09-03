@@ -287,9 +287,7 @@
 >   ❗️❗️ 동등 비교(==) 시 true를 반환함
 >   논리 평가 시 값 하나는 true, 다른 값 하나는 false를 반환함
 >
->   > [ex) let a = 0; alert( Boolean(a) ); // false
->   > > > let b = "0"; alert( Boolean(b) ); // true
->   > > > alert(a == b); // true!]
+>   > [ex) let a = 0; alert( Boolean(a) ); // false let b = "0"; alert( Boolean(b) ); // true alert(a == b); // true!]
 >
 > - `일치 연산자 ===`
 >   > - 형 변환 없이 값을 비교 가능, 비교가 매우 엄격함, 에러 발생 확률 ↓
