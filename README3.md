@@ -34,3 +34,9 @@
 ## 2-12 null 병합 연산자(nullish coalescing operator) `??`
 
 > - 확정되어있는 변수를 찾을 수 있음
+> - `a ?? b` : `a`가 `null`도 아니고 `undefined`도 아니면 `a` 그 외의 경우는 `b`
+> - ??는 첫 번째 정의된(defined) 값을 반환
+> - ||(or) 과 ??(null병합 연산자) 차이점
+>   > [ex) let height = 0;
+>   > alert(height || 100); // 100 --> height || 100 : height에 0을 할당, 0을 falsy 한 값으로 취급
+>   > alert(height ?? 100); // 0 --> height가 정확하게 null이나 undefined일 경우에만 100이 됨]
