@@ -35,3 +35,32 @@
 > - 객체 프로퍼티에 저장된 함수
 > - `object.doSomthing()`은 객체를 행동할 수 있게 해줌
 > - 메서드는 this로 객체를 참조
+
+## `new` 연산자와 생성자 함수
+
+> - 유사한 객체를 여러개 만들어야 할때 사용
+>
+> ### 생성자 함수
+>
+> > - 함수 이름 첫 글자는 대문자
+> > - 반드시 앞에 `new` 를 붙일것
+>
+> ### new.target
+>
+> > - 함수가 `new`와 함께 호출 되었는지 알 수 있음
+
+    function User() {
+    alert(new.target);
+    }
+
+    // "new" 없이 호출함
+    User(); // undefined
+
+    //"new"를 붙여 호출함
+    new User(); // function User { ... }
+
+> ### return
+>
+> > - this 가 있을 때
+> >   > - 객체를 return 한다면, this 대신 객체가 반환
+> >   > - 원시형을 return 한다면, return문이 무시
