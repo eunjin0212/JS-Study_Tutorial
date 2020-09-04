@@ -88,3 +88,16 @@
     // now user = { name: "John", canView: true, canEdit: true }
 
 > - 목표 객체(user)에 동일한 이름을 가진 프로퍼티가 있는 경우엔 기존 값이 덮어씌워 짐
+> - Object.assign을 사용하면 반복문 없이도 간단하게 객체를 복사가능
+
+    let user = {
+    name: "John",
+    age: 30
+    };
+
+    let clone = Object.assign({}, user);
+
+> - 프로퍼티가 다른 객체에 대한 참조값일 때
+>   > - user[key]의 각 값을 검사 --> 그 값이 객체인 경우 객체의 구조도 복사해주는 반복문을 사용(깊은 복사(deep cloning)) : [\_.cloneDeep(obj)](https://lodash.com/docs/4.17.15#cloneDeep)
+
+[Go to Next page](README7.md)
