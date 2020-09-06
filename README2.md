@@ -121,6 +121,9 @@
     alert( Infinity ); // 무한대
 
 > > - NaN : 특수 숫자 값(special numeric value), NaN과 문자열을 숫자로 나누면 오류 발생, 연산 과정에서 NaN이 반환되었다면, 모든 결과에 영향을 줌
+> > - 큰 숫자를 입ㅓ력 할 때 : 숫자 옆에 `e` + 0의 갯수
+> > - `e` 왼쪽 숫자에 e 오른쪽에 있는 수만틈 10의 거듭제곱을 곱함
+> > - `e` 오른쪽에 `-`음수가 있으면 음수의 절대값 만큼 10을 거듭제곱
 
     alert( "숫자가 아님" / 2 ); // 오류
 
@@ -805,7 +808,7 @@
 
 > ## 원시형
 >
-> > - 오직 하나의 데이터만 담을 수 있음 (문자, 숫자 등...)
+> > - 오직 하나의 데이터만 담을 수 있음 (문자(string), 숫자(number), bigint, 불린(boolean), 심볼(symbol), null, undefined)
 >
 > ## 객체형
 >
@@ -976,6 +979,9 @@
 ## 객체 원시형으로 변환
 
 > - 자동으로 형 변환
+>   > - "string" (alert 같이 문자열을 필요로 하는 연산)
+>   > - "number" (수학 연산)
+>   > - "default" (드물게 발생함)
 > - 객체는 논리 평가시 `true` 반환
 > - 객체는 숫자형, 문자형으로만 형 변환이 일어남
 > - `alert(obj)` 객체를 출력할 때 대개 문자형으로 형 변환
@@ -983,9 +989,9 @@
 > - 이항 덧셈 연산을 제외한 수학 연산에서 `hint`가 number가 됨
 > - `boolean` `hint`는 없음 --> 그냥 `true`로 평가
 > - ⭐️형 변환이 필요할때
->   > - 객체에 obj[Symbol.toPrimitive](hint)메서드가 있는지 찾음 --> 있다면 메서드를 호출 --> Symbol.toPrimitive는 시스템 심볼로, 심볼형 키로 사용됨
->   > - 첫 번째에 해당하지 않고 hint가 "string"이라면, obj.toString()나 obj.valueOf()를 호출함 (존재하는 메서드만 실행됨)
->   > - 위의 둘에 해당하지 않고, hint가 "number"나 "default"라면 obj.valueOf()나 obj.toString()을 호출(존재하는 메서드만 실행됨)
+>   > - 객체에 obj[Symbol.toPrimitive](hint)메서드가 있는지 찾음 --> 있다면 메서드를 호출 --> `Symbol.toPrimitive`는 시스템 심볼로, 심볼형 키로 사용됨
+>   > - 첫 번째에 해당하지 않고 hint가 `string`이라면, `obj.toString()`나 `obj.valueOf()`를 호출함 (존재하는 메서드만 실행됨)
+>   > - 위의 둘에 해당하지 않고, `hint`가 `number`나 `default`라면 `obj.valueOf()`나 `obj.toString()`을 호출(존재하는 메서드만 실행됨)
 
 ## Symbol.toPrimitive
 
@@ -1003,3 +1009,6 @@
 > > - `toString`, `valueOf`가 객체를 반환하면 무시됨
 > > - `toString` : 문자열 "[object Object]"을 반환
 > > - `valueOf` : 객체 자신을 반환
+
+> - 원시 래퍼 객체(object wrapper) : 원시값을 객체처럼 사용하기 위해 추가 기능을 제공해주는 특수한 객체, 이 객체는 곧 삭제됨
+>   > - 원시 자료형의 이름을 그대로 따옴 --> String,Number,Boolean, Symbol
