@@ -172,7 +172,7 @@
 > >   > - 객체 리터럴 {...}을 사용해 객체를 만든 경우, 대괄호를 사용해 심볼형 키를 만들어야함
 > >   > - for..in 반복문에서 배제됨
 > >   > - 이름이 같은 심볼이 같은 개체를 가리키길 원할 때 전역 심볼 레지스트리(global symbol registry) 사용 --> Symbol.for(심볼이름)사용, Symbol.keyFor(sym)을 사용하면 심볼 이름을 얻을 수 있음(전역심볼이, 있는 레지스트리를 뒤져서 해당 심볼의 이름을 얻어냄)
-> >   > - `시스템 심볼(system symbol)` : 객체를 미세조정 가능
+> >   > - `시스템 심볼(system symbol)` : 객체를 미세조정 가능 내부에서 사용되는 시스템 심볼은 `Symbol.*`으로 접근 가능
 > >   > - `잘 알려진 심볼(well-known symbols)`
 > >   >   > - Symbol.hasInstance
 > >   >   > - Symbol.isConcatSpreadable
