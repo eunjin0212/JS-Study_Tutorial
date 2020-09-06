@@ -979,3 +979,20 @@
 > - 객체는 논리 평가시 `true` 반환
 > - 객체는 숫자형, 문자형으로만 형 변환이 일어남
 > - alert(obj) 객체를 출력할 때 대개 문자형으로 형 변환
+> - `hint` : 목표로 하는 자료형
+> - 이항 덧셈 연산을 제외한 수학 연산에서 `hint`가 number가 됨
+> - "boolean" hint는 없음 --> 그냥 true로 평가
+> - ⭐️형 변환이 필요할때
+>   > - 객체에 obj[Symbol.toPrimitive](hint)메서드가 있는지 찾음 --> 있다면 메서드를 호출 --> Symbol.toPrimitive는 시스템 심볼로, 심볼형 키로 사용됨
+>   > - 첫 번째에 해당하지 않고 hint가 "string"이라면, obj.toString()나 obj.valueOf()를 호출함 (존재하는 메서드만 실행됨)
+>   > - 위의 둘에 해당하지 않고, hint가 "number"나 "default"라면 obj.valueOf()나 obj.toString()을 호출(존재하는 메서드만 실행됨)
+
+## Symbol.toPrimitive
+
+> > - JavaScript에 존재하는 내장 심볼
+> > - 목표로 하는 자료형 `hint`를 명명하는데 사용
+
+    obj[Symbol.toPrimitive] = function(hint) {
+    // 반드시 원시값을 반환해야 합니다.
+    // hint는 "string", "number", "default" 중 하나가 될 수 있습니다.
+    };
