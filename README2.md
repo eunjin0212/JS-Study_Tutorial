@@ -1110,3 +1110,5 @@
 > - `sort`, `reverse`, `splice` : 기존 배열을 변형시킴
 > - `arr.some(fn)` : 함수의 반환 값을 `true`로 만드는 요소가 하나라도 있는지 여부를 확인
 > - `arr.every(fn)` : 모든 요소가 함수의 반환 값을 `true`로 만드는지 여부를 확인
+> - `arr.fill(value, start, end)` : start부터 end까지 value를 채워 넣음
+> - `arr.copyWithin(target, start, end)` : start부터 end까지 요소를 복사, 복사한 요소를 target에 붙여넣음, 기존 요소가 있다면 덮어씀
