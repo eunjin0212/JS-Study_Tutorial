@@ -1141,6 +1141,7 @@
 > - `Object.entries` : 객체를 맵으로 바꾸기
 >   > - 메서드는 객체의 키-값 쌍을 요소([key, value])로 가지는 배열을 반환
 > - `Object.fromEntries` : 맵을 객체로 바꾸기
+> - 키 타입에 제약이 없음, 객체도 키가 가능
 
 ## 셋(Set)
 
@@ -1152,3 +1153,94 @@
 > - `set.clear()` : 셋을 비움
 > - `set.size` : 셋에 몇 개의 값이 있는지 세줌
 > - `for..of`, `forEach` : 사용하면 `set`에 반복 작업 가능
+> - `set.keys()` : 셋 내의 모든 값을 포함하는 이터러블 객체를 반환
+> - `set.values()` : `set.keys`와 동일한 작업을 함, 맵과의 호환성을 위해 만들어진 메서드
+> - `set.entries()` : 셋 내의 각 값을 이용해 만든 [value, value] 배열을 포함하는 이터러블 객체를 반환, 맵과의 호환성을 위해 만듬
+
+## 위크맵
+
+> - 구성하는 요소의 키는 오직 객체만 가능
+> - `weakMap.get(key)`, `weakMap.set(key, value)`, `weakMap.delete(key)`, `weakMap.has(key)`
+> - 키로 사용된 객체가 메모리에서 삭제되면 이에 대응하는 값 역시 삭제
+
+## 위크셋
+
+> - 객체만 저장할 수 있음, 원시값 저장❌
+> - `add`, `has`, `delete`를 사용할 수 있고, `size`, `keys()`나 반복 작업 관련 메서드는 사용할 수 없음
+
+## Object.keys, values, entries
+
+> - `Object.keys(obj)` : 키가 담긴 배열을 반환
+> - `Object.values(obj)` : 값이 담긴 배열을 반환
+> - `Object.entries(obj)` : [key, value] 쌍이 담긴 배열을 반환, 객체에도 배열 전용 매서드를 사용 가능하게 함
+>   > 1. `Object.entries(obj)`를 사용해 객체의 키-값 쌍을 요소로 갖는 배열을 얻음
+>   > 2. 1.에서 만든 배열에 `map` 등의 배열 전용 메서드를 적용
+>   > 3. 2.에서 반환된 배열에 `Object.fromEntries(array)`를 적용해 배열을 다시 객체로 되돌림
+> - 심볼형 프로퍼티는 무시함
+
+## 구조 분해 할당 (destructuring assignment)
+
+> ### 배열 분해
+>
+> - 어떤 것을 복사한 이후에 변수로 '분해(destructurize)'해준다는 의미
+> - 쉼표를 사용하면 필요하지 않은 배열 요소를 버릴 수 있음
+> - 할당 연산자 우측엔 모든 이터러블이 올 수 있음
+> - 할당 연산자 좌측엔 뭐든지 올 수 있음
+
+    let [item1 = default, item2, ...rest] = array
+
+> - `array`의 첫 번째 요소는 `item1`에, 두 번째 요소는 변수 `item2`에 할당되고, 이어지는 나머지 요소들은 배열 `rest` 저장
+> - 할당 연산자 좌측의 패턴과 우측의 구조가 같으면 중첩 배열이나 객체가 있는 복잡한 구조에서도 원하는 데이터를 뽑아낼 수 있음
+>
+> ### 객체 분해
+
+    let {prop : varName = default, ...rest} = object
+
+> - `object`의 프로퍼티 `prop`의 값은 변수 `varName`에 할당되는데, `object`에 `prop`이 없으면 `default`가 `varName`에 할당
+> - 연결할 변수가 없는 나머지 프로퍼티들은 객체 `rest`에 복사
+
+## Date 객체와 날짜
+
+> - `new Date()` : 인수 없이 호출하면 현재 날짜와 시간이 저장된 Date 객체가 반환
+> - `new Date(milliseconds)` : UTC 기준(UTC+0) 1970년 1월 1일 0시 0분 0초에서 milliseconds 밀리초(1/1000 초) 후의 시점이 저장된 Date 객체가 반환
+> - `타임스탬프(timestamp)` : 1970년의 첫날을 기준으로 흘러간 밀리초를 나타내는 정수
+>   > - `new Date(timestamp)` 로 만들고 `date.getTime()` 메서드를 사용해 `Date` 객체에서 타임스탬프를 추출하는 것도 가능
+> - `new Date(datestring)` : 인수가 하나인데, 문자열이라면 해당 문자열은 자동으로 구문 분석(parsed)됨
+> - `new Date(year, month, date, hours, minutes, seconds, ms)` : 주어진 인수를 조합해 만들 수 있는 날짜가 저장된 객체가 반환, 첫 번째와 두 번째 인수만 필수값
+>   > - `year`는 반드시 네 자리 숫자
+>   > - `month`는 0(1월)부터 11(12월) 사이의 숫자
+>   > - `date`는 일을 나타내는데, 값이 없는 경우엔 1일로 처리
+>   > - `hours/minutes/seconds/ms`에 값이 없는 경우엔 0으로 처리
+>
+> ### 날짜 구성요소 얻기
+>
+> - `getFullYear()` : 연도(네 자릿수)를 반환합니다.
+> - `getMonth()` : 월을 반환합니다(0 이상 11 이하)
+> - `getDate()` : 일을 반환합니다(1 이상 31 이하)
+> - `getHours()`, `getMinutes()`, `getSeconds()`, `getMilliseconds()` : 시, 분, 초, 밀리초를 반환
+> - `getTime()` : 주어진 일시와 1970년 1월 1일 00시 00분 00초 사이의 간격(밀리초 단위)인 타임스탬프를 반환
+> - `getTimezoneOffset()` : 현지 시간과 표준 시간의 차이(분)를 반환
+> - `Date.now()` : 현재 타임 스탬프를 반환하는 메서드
+> - ` Date.parse(str)` : 문자열에서 날짜를 읽어올 수 있음, 문자열의 형식은 YYYY-MM-DDTHH:mm:ss.sssZ처럼 생겨야함
+>   > - YYYY-MM-DD – 날짜(연-월-일)
+>   > - "T" – 구분 기호로 쓰임
+>   > - HH:mm:ss.sss – 시:분:초.밀리초
+>   > - 'Z'(옵션) – +-hh:mm 형식의 시간대를 나타냄. Z 한 글자인 경우엔 UTC+0을 나타냄
+> - 자바스크립트의 타임스탬프는 초가 아닌 밀리초 기준이라는 점을 항상 유의
+
+## JSON과 메서드
+
+> - JSON (JavaScript Object Notation)은 값이나 객체를 나타내주는 범용 포맷
+> - 주석을 지원하지 않음
+>   > - `JSON.stringify` : 객체를 JSON으로 바꿔줌 이렇게 바뀐 객체를 JSON으로 인코딩된(JSON-encoded), 직렬화 처리된(serialized), 문자열로 변환된(stringified), 결집된(marshalled) 객체라고 부름
+>   >   > - JSON으로 인코딩된 객체는 문자열은 큰따옴표로 감싸야 함, JSON에선 작은따옴표나 백틱을 사용할 수 없음
+>   >   > - toJSON 메서드가 있으면 이를 자동으로 호출
+>   >   > - 객체 프로퍼티 이름은 큰따옴표로 감싸야 함
+>   >   > - 적용 할 수 있는 자료형 : 객체 {...}, 배열 [...], 원시형 (문자형, 숫자형, 불린형, null)
+
+    let json = JSON.stringify(value(인코딩 하려는 값)[, replacer(JSON으로 인코딩 하길 원하는 프로퍼티가 담긴 배열. 또는 매핑 함수 function(key, value)
+    ), space(서식 변경 목적으로 사용할 공백 문자 수)])
+
+> > - `JSON.parse` : JSON을 객체로 바꿔줌, JSON으로 인코딩된 객체를 다시 객체로 디코딩 할 수 있음
+
+    let value = JSON.parse(str(JSON 형식의 문자열), [reviver(모든 (key, value) 쌍을 대상으로 호출되는 function(key,value) 형태의 함수로 값을 변경가능)]);
