@@ -1104,3 +1104,9 @@
 > - `arr.map` : 배열 요소 전체를 대상으로 함수를 호출 --> 함수 호출 결과를 배열로 반환
 > - `arr.sort()` : 배열의 요소를 정렬해줌, 배열 자체가 변경
 > - `arr.reverse` : arr의 요소를 역순으로 정렬
+> - `arr.split/join` : 문자열을 배열로, 배열을 문자열로 변환함
+> - `arr.reduce(func, initial)` : 요소를 차례로 돌면서 func을 호출함, 반환값은 다음 함수 호출에 전달, 최종적으로 하나의 값이 도출
+> - `Array.isArray(arr)` : arr이 배열인지 여부를 판단함
+> - `sort`, `reverse`, `splice` : 기존 배열을 변형시킴
+> - `arr.some(fn)` : 함수의 반환 값을 `true`로 만드는 요소가 하나라도 있는지 여부를 확인
+> - `arr.every(fn)` : 모든 요소가 함수의 반환 값을 `true`로 만드는지 여부를 확인
