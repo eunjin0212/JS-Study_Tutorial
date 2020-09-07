@@ -1112,3 +1112,43 @@
 > - `arr.every(fn)` : 모든 요소가 함수의 반환 값을 `true`로 만드는지 여부를 확인
 > - `arr.fill(value, start, end)` : start부터 end까지 value를 채워 넣음
 > - `arr.copyWithin(target, start, end)` : start부터 end까지 요소를 복사, 복사한 요소를 target에 붙여넣음, 기존 요소가 있다면 덮어씀
+
+## iterable 객체
+
+> - 반복 가능한(iterable, 이터러블) 객체는 배열을 일반화한 객체
+> - 어떤 객체에든 `for..of` 반복문을 적용 가능
+> - 메서드 `Symbol.iterator`가 구현된 객체
+> - `유사 배열(array-like) `과 헷갈리지 말것, 인덱스와 length 프로퍼티가 있어서 배열처럼 보이는 객체
+> - 이터레이터 : `obj[Symbol.iterator]`의 결과, 이어지는 반복 과정을 처리, 객체 {done: Boolean, value: any}을 반환하는 메서드 `next()`가 반드시 구현
+> - `done:true` : 반복이 끝났음을 알려줌 --> 그렇지 않으면 `value`가 다음값이 됨
+> - 문자열 이터레이터는 서로게이트 쌍을 지원
+> - `Array.from(obj[, mapFn, thisArg])` : 이터러블이나 유사 배열인 obj를 진짜 Array로 만들 수 있음, obj에도 배열 메서드를 사용가능, 선택 인수 `mapFn`와 `thisArg` --> 각 요소에 함수를 적용 시킬수 있음
+
+## 맵(Map)
+
+> - `new Map()` : 맵을 만듬
+> - `map.set(key, value)` : `key`를 이용해 `value`를 저장
+> - `map.get(key)` : `key`에 해당하는 값을 반환, `key`가 존재하지 않으면 `undefined`를 반환
+> - `map.has(key)` : `key`가 존재하면 `true`, 존재하지 않으면 `false`를 반환
+> - `map.delete(key)` : `key`에 해당하는 값을 삭제
+> - `map.clear()` : 맵 안의 모든 요소를 제거
+> - `map.size` : 요소의 개수를 반환
+> - `map`을 사용할 땐 map전용 메서드 `set`, `get` 등을 사용
+> - 객체를 `key`로 사용 가능
+> - `map.keys()` : 각 요소의 키를 모은 반복 가능한(iterable, 이터러블) 객체를 반환
+> - `map.values()` : 각 요소의 값을 모은 이터러블 객체를 반환
+> - `map.entries()` : 요소의 [키, 값]을 한 쌍으로 하는 이터러블 객체를 반환, 이 이터러블 객체는 `for..of`반복문의 기초로 쓴다
+> - `Object.entries` : 객체를 맵으로 바꾸기
+>   > - 메서드는 객체의 키-값 쌍을 요소([key, value])로 가지는 배열을 반환
+> - `Object.fromEntries` : 맵을 객체로 바꾸기
+
+## 셋(Set)
+
+> - 중복을 허용하지 않는 값을 모아놓음, 셋에 키가 없는 값이 저장
+> - `new Set(iterable)` : 셋을 만듬, 이터러블 객체를 전달받으면(대개 배열을 전달받음) 그 안의 값을 복사해 셋에 넣어줌
+> - `set.add(value)` : 값을 추가하고 셋 자신을 반환
+> - `set.delete(value)` : 값을 제거, 호출 시점에 셋 내에 값이 있어서 제거에 성공하면 true, 아니면 false를 반환
+> - `set.has(value)` : 셋 내에 값이 존재하면 true, 아니면 false를 반환
+> - `set.clear()` : 셋을 비움
+> - `set.size` : 셋에 몇 개의 값이 있는지 세줌
+> - `for..of`, `forEach` : 사용하면 `set`에 반복 작업 가능
