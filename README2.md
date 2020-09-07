@@ -67,6 +67,7 @@
 > > - 변수(variable) : 데이터를 저장할 때 쓰이는 ‘이름이 붙은 저장소’
 > > - let : 모던한 변수 선언
 
+```js
     let message; // 변수 선언
     message = 'Hello'; // 문자열 저장
     alert(message); // 변수에 저장된 값 보여줌
@@ -74,6 +75,7 @@
     - 더 간단하게
     let message = 'Hello!'; // 변수를 선언하고 값을 할당
     alert(message); // Hello!
+```
 
 > > - 변수 선언은 한 줄에 하나씩
 
