@@ -654,6 +654,15 @@
 
 [요약본 다시보기](https://ko.javascript.info/javascript-specials)
 
+> ### 재귀와 스택
+>
+> > - 재귀(recursion) : 함수에서 다른 함수를 호출해야할 때, 함수가 자기 자신을 호출 하는 것
+> > - 재귀 단계(recursion step) : 함수가 자신을 호출하는 단계
+> > - 재귀의 베이스(base) : 작업을 아주 간단하게 만들어서 함수가 더 이상은 서브 호출을 만들지 않게 해주는 인수
+> > - 재귀적으로 정의된 자료 구조는 자기 자신을 이용해 자료 구조를 정의, 재귀적으로 정의된 자료구조에 속하는 연결 리스트는 리스트 혹은 null을 참조하는 객체로 이루어진 데이터 구조를 사용해 정의됨
+
+    list = {value, next -> list}
+
 # 스타일 가이드
 
 [코딩 스타일](https://ko.javascript.info/coding-style)
