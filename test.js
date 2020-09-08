@@ -61,10 +61,6 @@
 
 // multiply(3, 4);
 
-// const answer = prompt("이름이 무엇인가요?");
-// console.log(answer);
-// alert(answer);
-
 // const obj = {
 //   x: 0,
 //   y: 1,
