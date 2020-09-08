@@ -159,9 +159,46 @@
 // console.log(14 % 3);
 // console.log(2 ** 3);
 
-console.log(1 < 2);
-console.log(3 > 4);
-console.log(5 <= 5);
-console.log(6 >= 5);
-console.log(8 === 8);
-console.log(8 !== 8);
+// console.log(1 < 2);
+// console.log(3 > 4);
+// console.log(5 <= 5);
+// console.log(6 >= 5);
+// console.log(8 === 8);
+// console.log(8 !== 8);
+
+// let a = 1;
+// a++;
+// console.log(a);
+// let b = 1;
+// b++;
+// console.log(b);
+// let c = 1;
+// --c;
+// console.log(c);
+// let d = 1;
+// d--;
+// console.log(d);
+
+// let x = 0;
+// x += 1;
+// console.log(x);
+
+// let x = 0;
+// x = x + 1;
+// console.log(x);
+
+// let x = 0;
+// x -= 1;
+// console.log(x);
+
+// let x = 0;
+// x *= 2;
+// console.log(x);
+
+// let x = 4;
+// x /= 2;
+// console.log(x);
+
+let x = 8;
+x %= 3;
+console.log(x);
