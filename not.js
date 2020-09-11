@@ -14,3 +14,8 @@
 //   const result = num * 2;
 //   alert(`${num}의 두배는 ${result} 입니다.`);
 // }
+
+const start = new Date();
+alert("시간이 가고 있습니다...");
+const end = new Date();
+alert(`${end - start}밀리초 만큼 시간이 경과되었습니다.`);

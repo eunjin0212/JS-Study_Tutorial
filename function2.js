@@ -204,6 +204,69 @@
 //   };
 // }
 
-const makeAdder = (x) => (y) => x + y;
-const add2 = makeAdder(2);
-console.log(add2(3));
+// const makeAdder = (x) => (y) => x + y;
+// const add2 = makeAdder(2);
+// console.log(add2(3));
+
+// const makeCounter = (x = 1) => () => x++;
+// const counter = makeCounter();
+// console.log(counter());
+// console.log(counter());
+
+// function func() {
+//   func();
+// }
+
+function factorialLooop(n) {
+  let result = 1;
+  for (let i = 2; i <= n; i++) {
+    result *= i;
+  }
+  return result;
+}
+
+function factorialLooop(n) {
+  return n <= 1 ? 1 : n * factorialLooop(n - 1);
+}
+function fiboLoop(n) {
+  let x = 0;
+  let y = 1;
+  for (let i = 0; i < n; i++) {
+    [x, y] = [y, x + y];
+  }
+  return x;
+}
+
+function fiboRec(n) {
+  return n < 1 ? 0 : n === 1 ? 1 : fiboRec(n - 1) + fiboRec(n - 2);
+}
+
+function mergeSort(arr) {
+  if (arr.length <= 1) return arr;
+  const slicer = Math.floor(arr.length / 2);
+  const arr1 = mergeSort(arr.slicer(0, slicer));
+  const arr2 = mergeSort(arr.slicer(slicer));
+  const newArr = [];
+  for (let i = 0, j = 0; i < arr1.length || j < arr2.length; ) {
+    if (arr1[i] == undefined || arr1[i] > arr2[j]) {
+      newArr.push(arr2[i]);
+      j++;
+    } else {
+      newArr.push(arr1[i]);
+      i++;
+    }
+  }
+  return newArr;
+}
+
+const fiboRecMemoized = (() => {
+  const memo = new Map();
+  const fiboRec = (n) => {
+    let result = memo.get(n);
+    if (result != undefined) return result;
+    result = n < 1 ? 0 : n === 1 ? 1 : fiboRec(n - 1) + fiboRec(n - 2);
+    memo.set(n, result);
+    return result;
+  };
+  return fiboRec;
+})();
