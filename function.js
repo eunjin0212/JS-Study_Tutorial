@@ -125,4 +125,8 @@
 
 // const negate = (x) => !x;
 
-// [1, 2, 3, 4, 5].filter((x) => x % 2 === 0);
+function add(x, y) {
+  return x + y;
+}
+class Person {}
+export { add, Person };

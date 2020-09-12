@@ -1,2 +1,4 @@
 const foo = "bar";
-console.log(foo);
+const spam = "eggs";
+
+export { foo, spam };
