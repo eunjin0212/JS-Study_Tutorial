@@ -110,34 +110,56 @@
 
 // class Parent {}
 // class Child extends Parent {}
-class Parent {
-  static staticProp = "staticProp";
-  static staticMethod() {
-    return "I'm a static method";
+// class Parent {
+//   static staticProp = "staticProp";
+//   static staticMethod() {
+//     return "I'm a static method";
+//   }
+//   instanceProp = "instanceProp";
+//   instanceMethod() {
+//     return "I'm a instance method.";
+//   }
+// }
+// class Child extends Parent {}
+
+// console.log(Child.staticProp);
+// console.log(Child.staticMethod());
+
+// const c = new Child();
+// console.log(c.instanceProp);
+// console.log(c.instanceMethod());
+
+// class Melon {
+//   getColor() {
+//     return "색깔 초록색";
+//   }
+// }
+// class WaterMelon extends Melon {
+//   getColor() {
+//     return super.getColor() + " 하지만 속은 빨강";
+//   }
+// }
+// const waterMelon = new WaterMelon();
+// console.log(waterMelon.getColor());
+
+class Person {
+  constructor({ name, age }) {
+    this.name = name;
+    this.age = age;
   }
-  instanceProp = "instanceProp";
-  instanceMethod() {
-    return "I'm a instance method.";
+  introduce() {
+    return `제 이름은 ${this.name}입니다.`;
   }
 }
-class Child extends Parent {}
 
-console.log(Child.staticProp);
-console.log(Child.staticMethod());
-
-const c = new Child();
-console.log(c.instanceProp);
-console.log(c.instanceMethod());
-
-class Melon {
-  getColor() {
-    return "색깔 초록색";
+class Student extends Person {
+  constructor({ grade, ...rest }) {
+    super(rest);
+    this.grade = grade;
+  }
+  introduce() {
+    return super.introduce() + ` 저는 ${this.grade}학년 입니다.`;
   }
 }
-class WaterMelon extends Melon {
-  getColor() {
-    return super.getColor()"하지만 속은 빨강";
-  }
-}
-const waterMelon = new WaterMelon();
-console.log(waterMelon.getColor());
+const s = new Student({ grade: 3, name: "jun", age: 19 });
+console.log(s.introduce());
