@@ -90,17 +90,22 @@
 // console.log((obj.a = 1));
 // console.log((obj = 1));
 
-const s = "hello";
-console.log(s.toUpperCase());
-console.log(s.length);
+// const s = "hello";
+// console.log(s.toUpperCase());
+// console.log(s.length);
 
-const n = 1.2345;
-console.log(n.toFixed(2));
+// const n = 1.2345;
+// console.log(n.toFixed(2));
 
-const b = true;
-console.log(b.toString());
+// const b = true;
+// console.log(b.toString());
 
-const stringObj = new String("hello");
-console.log(stringObj.toUpperCase());
-console.log(stringObj.length);
-const string = stringObj.valueOf();
+// const stringObj = new String("hello");
+// console.log(stringObj.toUpperCase());
+// console.log(stringObj.length);
+// const string = stringObj.valueOf();
+
+if (true) {
+  let i = 0;
+  console.log(i);
+}
